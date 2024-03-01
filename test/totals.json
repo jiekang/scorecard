@@ -1,0 +1,12 @@
+{
+    "url": "https://trss.adoptium.net/api/getTotals?id=65a706d596a988006d0eed2b",
+    "value": {
+        "_id": {},
+        "total": 9216,
+        "executed": 3399,
+        "passed": 3257,
+        "failed": 142,
+        "disabled": 648,
+        "skipped": 5169
+    }
+}

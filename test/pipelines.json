@@ -1,0 +1,89 @@
+{
+    "url": "https://trss.adoptium.net/api/getTopLevelBuildNames?type=Test",
+    "value": [
+        {
+            "_id": {
+                "url": "https://ci.adoptium.net/job/build-scripts",
+                "buildName": "evaluation-openjdk17-pipeline"
+            }
+        },
+        {
+            "_id": {
+                "url": "https://ci.adoptium.net/job/build-scripts",
+                "buildName": "evaluation-openjdk21-pipeline"
+            }
+        },
+        {
+            "_id": {
+                "url": "https://ci.adoptium.net/job/build-scripts",
+                "buildName": "openjdk11-pipeline"
+            }
+        },
+        {
+            "_id": {
+                "url": "https://ci.adoptium.net/job/build-scripts",
+                "buildName": "openjdk17-pipeline"
+            }
+        },
+        {
+            "_id": {
+                "url": "https://ci.adoptium.net/job/build-scripts",
+                "buildName": "openjdk20-pipeline"
+            }
+        },
+        {
+            "_id": {
+                "url": "https://ci.adoptium.net/job/build-scripts",
+                "buildName": "openjdk21-pipeline"
+            }
+        },
+        {
+            "_id": {
+                "url": "https://ci.adoptium.net/job/build-scripts",
+                "buildName": "openjdk22-pipeline"
+            }
+        },
+        {
+            "_id": {
+                "url": "https://ci.adoptium.net/job/build-scripts",
+                "buildName": "openjdk23-pipeline"
+            }
+        },
+        {
+            "_id": {
+                "url": "https://ci.adoptium.net/job/build-scripts",
+                "buildName": "openjdk8-pipeline"
+            }
+        },
+        {
+            "_id": {
+                "url": "https://ci.adoptium.net/job/build-scripts",
+                "buildName": "release-openjdk11-pipeline"
+            }
+        },
+        {
+            "_id": {
+                "url": "https://ci.adoptium.net/job/build-scripts",
+                "buildName": "release-openjdk17-pipeline"
+            }
+        },
+        {
+            "_id": {
+                "url": "https://ci.adoptium.net/job/build-scripts",
+                "buildName": "release-openjdk21-pipeline"
+            }
+        },
+        {
+            "_id": {
+                "url": "https://ci.adoptium.net/job/build-scripts",
+                "buildName": "release-openjdk8-pipeline"
+            }
+        },
+        {
+            "_id": {
+                "url": "https://ci.adoptopenjdk.net",
+                "buildName": "AQA_Test_Pipeline"
+            }
+        }
+    ]
+}
