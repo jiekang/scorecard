@@ -17,4 +17,12 @@ curl -s -X 'GET' \
     ${URL} \
     -H 'accept: application/json' >${PIPELINE_INFO}
 
-jq '.[] | select((.status == "Done") and (.startBy | . and contains ("upstream")))' ${PIPELINE_INFO}
+DATA=$(jq '.[] | select(.status == "Done") | ._id' ${PIPELINE_INFO})
+mkdir -p data/totals/
+
+for ID in $(echo $DATA | tr -d \"); do
+    TOTALS_URL=https://trss.adoptium.net/api/getTotals?id=${ID}
+    curl -s -X 'GET' \
+        ${TOTALS_URL} \
+        -H 'accept: application/json' >data/totals/${ID}.json
+done
