@@ -40,7 +40,10 @@ if [ ! -f ./${PIPELINE_INFO} ]; then
         -H 'accept: application/json' >${PIPELINE_INFO}
 fi
 
-BUILD_IDS=$(jq '.[] | select(.timestamp > '${TIMESTAMP}') | ._id' ${PIPELINE_INFO})
+BUILD_IDS=$(jq '{ids: [.[] | select(.timestamp > '${TIMESTAMP}') | ._id]}' ${PIPELINE_INFO})
+echo ${BUILD_IDS} > data/builds.json
+
+BUILD_IDS=$(jq '.ids[]' data/builds.json)
 mkdir -p data/totals/
 mkdir -p data/child/
 
