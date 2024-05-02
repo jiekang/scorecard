@@ -1,13 +1,9 @@
-ID=661f70c9879917006e985908
+INTERMEDIATE=$(cat ./totals.json)
 
-FILE=data/child/test-${ID}.json
 
-RESULT=$(jq '[.[] | 
-    {"buildName": .buildName,
-    "buildDuration": .buildDuration,
-    "testSummary": .testSummary,
-    "platform": .buildParams | .[] | select(.name=="PLATFORM") | .value,
-    "version": .buildParams | .[] | select(.name=="JDK_VERSION") | .value
-    }]' ${FILE})
+RESULT=$(jq '
+        {"blob": .}
+        ' totals.json)
+
 echo $RESULT
 echo $RESULT >tmp.json

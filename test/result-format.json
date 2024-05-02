@@ -1,0 +1,64 @@
+{
+    "releases": [
+        {
+            "releaseName": "name",
+            "date": "date",
+            "duration": 0,
+            "platforms": [
+                {
+                    "platfrom": "platform",
+                    "testTargetTotals": {
+                        "total": 0,
+                        "executed": 0,
+                        "passed": 0,
+                        "failed": 0,
+                        "disabled": 0,
+                        "skipped": 0
+                    },
+                    "testTotals": {
+                        "total": 0,
+                        "executed": 0,
+                        "passed": 0,
+                        "failed": 0,
+                        "disabled": 0,
+                        "skipped": 0
+                    },
+                    "machinesAvailable": {
+                        "dryRun": 0,
+                        "release": 0
+                    },
+                    "duration": 0,
+                    "versions": [
+                        {
+                            "version": "version",
+                            "testTargetTotals": {
+                                "total": 0,
+                                "executed": 0,
+                                "passed": 0,
+                                "failed": 0,
+                                "disabled": 0,
+                                "skipped": 0
+                            },
+                            "testTotals": {
+                                "total": 0,
+                                "executed": 0,
+                                "passed": 0,
+                                "failed": 0,
+                                "disabled": 0,
+                                "skipped": 0
+                            },
+                            "duration": 0,
+                            "testTargets": [
+                                {
+                                    "name": "name",
+                                    "duration": 0
+                                }
+                            ]
+                        }
+                    ] 
+                }
+            ]
+
+        }
+    ]
+}
