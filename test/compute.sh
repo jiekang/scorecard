@@ -31,5 +31,3 @@ VERSION_EXECUTION_TIME=0
 for ID in $(echo ${BUILD_IDS} | tr -d \"); do
     computeTestData $ID
 done
-
-FORMAT_FILE=result-format.json
