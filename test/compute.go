@@ -16,7 +16,7 @@ type Version struct {
 	TestTargetTotals TestTotals
 	TestTotals       TestTotals
 	Duration         int
-	TestTargets      []TestTarget
+	TestTargets      map[string]TestTarget
 }
 
 type MachinesAvailable struct {
@@ -39,21 +39,22 @@ type Platform struct {
 	TestTotals        TestTotals
 	MachinesAvailable MachinesAvailable
 	Duration          int
-	Versions          []Version
+	Versions          map[string]Version
 }
 
 type Release struct {
 	ReleaseName string
 	Date        string
 	Duration    int
-	Platforms   []Platform
+	Platforms   map[string]Platform
 }
 
 type Builds struct {
 	Ids []string
 }
 
-var versions = []int{8, 11, 17, 21}
+var dataPath = "./data"
+var result Release
 
 func main() {
 	if len(os.Args) < 2 {
@@ -64,13 +65,11 @@ func main() {
 	name := os.Args[1]
 	date := os.Args[2]
 
-	dataPath := "./data"
 	if len(os.Args) > 3 {
 		dataPath = os.Args[3]
 	}
 
-	result := Release{name, date, 0, []Platform{}}
-	_ = result
+	result = Release{name, date, 0, make(map[string]Platform)}
 
 	file := dataPath + "/builds.json"
 	data, err := os.ReadFile(file)
@@ -86,8 +85,52 @@ func main() {
 		computeBuild(id)
 	}
 
+	fmt.Printf("%v", result)
+
 }
 
 func computeBuild(id string) {
-	fmt.Println("id ", id)
+	fmt.Println("Adding data for build group: ", id)
+	computeBuildData(id)
+	computeTestData(id)
+}
+
+func computeBuildData(id string) {
+	file := dataPath + "/child/jdk-" + id + "-compute.json"
+	data, err := os.ReadFile(file)
+	if err != nil {
+		fmt.Println("Unable to read: ", file)
+		panic(err)
+	}
+	var buildData []interface{}
+	json.Unmarshal(data, &buildData)
+}
+
+func computeTestData(id string) {
+	file := dataPath + "/child/test-" + id + "-compute.json"
+	data, err := os.ReadFile(file)
+	if err != nil {
+		fmt.Println("Unable to read: ", file)
+		panic(err)
+	}
+	var testData []interface{}
+	json.Unmarshal(data, &testData)
+
+	for _, i := range testData {
+		item := i.(map[string]any)
+
+		platform := item["platform"].(string)
+
+		if _, f := result.Platforms[platform]; !f {
+			p := Platform{}
+			p.Platform = platform
+			ttt := TestTotals{0, 0, 0, 0, 0, 0}
+			if item["testSummary"] != nil {
+				summary := item["testSummary"].(map[string]any)
+				ttt.Disabled += int(summary["disabled"].(float64))
+			}
+			p.TestTargetTotals = ttt
+			result.Platforms[platform] = p
+		}
+	}
 }
