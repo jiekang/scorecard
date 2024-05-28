@@ -86,11 +86,10 @@ func main() {
 	}
 
 	fmt.Printf("%v", result)
-
 }
 
 func computeBuild(id string) {
-	fmt.Println("Adding data for build group: ", id)
+	fmt.Printf("Adding data for build group: %s\n", id)
 	computeBuildData(id)
 	computeTestData(id)
 }
@@ -121,16 +120,46 @@ func computeTestData(id string) {
 
 		platform := item["platform"].(string)
 
-		if _, f := result.Platforms[platform]; !f {
-			p := Platform{}
-			p.Platform = platform
-			ttt := TestTotals{0, 0, 0, 0, 0, 0}
-			if item["testSummary"] != nil {
-				summary := item["testSummary"].(map[string]any)
-				ttt.Disabled += int(summary["disabled"].(float64))
-			}
-			p.TestTargetTotals = ttt
-			result.Platforms[platform] = p
-		}
+		addPlatformData(platform, item)
+
+		version := item["version"].(string)
+		_ = version
+		addVersionData(platform, version, item)
 	}
+}
+
+func addPlatformData(platform string, data map[string]any) {
+	fmt.Printf("Adding platform data for: %s\n", platform)
+	if _, f := result.Platforms[platform]; !f {
+		p := Platform{}
+		p.Platform = platform
+		p.Versions = make(map[string]Version)
+		result.Platforms[platform] = p
+	}
+	p := result.Platforms[platform]
+	ttt := TestTotals{0, 0, 0, 0, 0, 0}
+	if data["testSummary"] != nil {
+		summary := data["testSummary"].(map[string]any)
+		ttt.Disabled += int(summary["disabled"].(float64))
+	}
+	p.TestTargetTotals = ttt
+	result.Platforms[platform] = p
+}
+
+func addVersionData(platform string, version string, data map[string]any) {
+	fmt.Printf("Adding version data for: %s %s\n", platform, version)
+	p := result.Platforms[platform]
+	if _, f := p.Versions[version]; f {
+		v := Version{}
+		v.Version = version
+		p.Versions[version] = v
+	}
+	v := p.Versions[version]
+	ttt := TestTotals{0, 0, 0, 0, 0, 0}
+	if data["testSummary"] != nil {
+		summary := data["testSummary"].(map[string]any)
+		ttt.Disabled += int(summary["disabled"].(float64))
+	}
+	v.TestTargetTotals = ttt
+	p.Versions[version] = v
 }
