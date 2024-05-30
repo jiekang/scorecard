@@ -123,7 +123,6 @@ func computeTestData(id string) {
 		addPlatformData(platform, item)
 
 		version := item["version"].(string)
-		_ = version
 		addVersionData(platform, version, item)
 	}
 }
@@ -134,15 +133,13 @@ func addPlatformData(platform string, data map[string]any) {
 		p := Platform{}
 		p.Platform = platform
 		p.Versions = make(map[string]Version)
+		p.TestTargetTotals = TestTotals{0, 0, 0, 0, 0, 0}
+		p.Duration = 0
 		result.Platforms[platform] = p
 	}
 	p := result.Platforms[platform]
-	ttt := TestTotals{0, 0, 0, 0, 0, 0}
-	if data["testSummary"] != nil {
-		summary := data["testSummary"].(map[string]any)
-		ttt.Disabled += int(summary["disabled"].(float64))
-	}
-	p.TestTargetTotals = ttt
+	p.Duration += int(data["buildDuration"].(float64))
+	addTestTotals(&p.TestTargetTotals, data)
 	result.Platforms[platform] = p
 }
 
@@ -152,14 +149,24 @@ func addVersionData(platform string, version string, data map[string]any) {
 	if _, f := p.Versions[version]; f {
 		v := Version{}
 		v.Version = version
+		v.TestTargetTotals = TestTotals{0, 0, 0, 0, 0, 0}
+		v.Duration = 0
 		p.Versions[version] = v
 	}
 	v := p.Versions[version]
-	ttt := TestTotals{0, 0, 0, 0, 0, 0}
+	v.Duration += int(data["buildDuration"].(float64))
+	addTestTotals(&v.TestTargetTotals, data)
+	p.Versions[version] = v
+}
+
+func addTestTotals(totals *TestTotals, data map[string]any) {
 	if data["testSummary"] != nil {
 		summary := data["testSummary"].(map[string]any)
-		ttt.Disabled += int(summary["disabled"].(float64))
+		totals.Disabled += int(summary["disabled"].(float64))
+		totals.Executed += int(summary["executed"].(float64))
+		totals.Failed += int(summary["failed"].(float64))
+		totals.Passed += int(summary["passed"].(float64))
+		totals.Skipped += int(summary["skipped"].(float64))
+		totals.Total += int(summary["total"].(float64))
 	}
-	v.TestTargetTotals = ttt
-	p.Versions[version] = v
 }
