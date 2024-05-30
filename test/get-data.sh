@@ -1,13 +1,15 @@
+#!/bin/bash
+
 # e.g. 17
 VERSION=$1
 if [ -z $VERSION ]; then
-    echo "Usage $0 version-number"
+    echo "Usage $0 version-number date"
     exit
 fi
 
 # e.g. 2024-04-01
 DATE=$2
-if [ -z $DATE] ]; then
+if [ -z $DATE ]; then
     echo "Usage $0 version-number date"
     exit
 fi
@@ -38,30 +40,26 @@ if [ ! -f ${PIPELINE_INFO} ]; then
 fi
 
 BUILD_IDS=$(jq '{ids: [.[] | select(.timestamp > '${TIMESTAMP}') | ._id]}' ${PIPELINE_INFO})
-echo ${BUILD_IDS} >data/builds.json
+echo ${BUILD_IDS} >data/builds-${VERSION}.json
 
-BUILD_IDS=$(jq '.ids[]' data/builds.json)
-mkdir -p data/totals/
+BUILD_IDS=$(jq '.ids[]' data/builds-${VERSION}.json)
 mkdir -p data/child/
 
 echo "Processing builds for JDK ${VERSION}"
 
 for ID in $(echo ${BUILD_IDS} | tr -d \"); do
-    TOTALS_URL="https://trss.adoptium.net/api/getTotals?id=${ID}"
-    echo "Acquiring totals for ${ID} via ${TOTALS_URL}"
-    curl -s -X 'GET' \
-        ${TOTALS_URL} \
-        -H 'accept: application/json' >data/totals/${ID}.json
 
-    CHILD_JDK_URL="https://trss.adoptium.net/api/getAllChildBuilds?buildNameRegex=%5E(jdk%5B0-9%5D%7B1%2C2%7D%7CBuild_)&parentId=${ID}"
-    echo "Acquiring jdk jobs for ${ID} via ${CHILD_JDK_URL}"
-    curl -s -X 'GET' \
-        ${CHILD_JDK_URL} \
-        -H 'accept: application/json' >data/child/jdk-${ID}.json
+    if [ ! -f data/child/jdk-${ID}.json ]; then
+        CHILD_JDK_URL="https://trss.adoptium.net/api/getAllChildBuilds?buildNameRegex=%5E(jdk%5B0-9%5D%7B1%2C2%7D%7CBuild_)&parentId=${ID}"
+        echo "Acquiring jdk jobs for ${ID} via ${CHILD_JDK_URL}"
+        curl -s -X 'GET' \
+            ${CHILD_JDK_URL} \
+            -H 'accept: application/json' >data/child/jdk-${ID}.json
 
-    CHILD_TEST_URL="https://trss.adoptium.net/api/getAllChildBuilds?buildNameRegex=%5ETest_openjdk.*&parentId=${ID}"
-    echo "Acquiring test jobs for ${ID} via ${CHILD_TEST_URL}"
-    curl -s -X 'GET' \
-        ${CHILD_TEST_URL} \
-        -H 'accept: application/json' >data/child/test-${ID}.json
+        CHILD_TEST_URL="https://trss.adoptium.net/api/getAllChildBuilds?buildNameRegex=%5ETest_openjdk.*&parentId=${ID}"
+        echo "Acquiring test jobs for ${ID} via ${CHILD_TEST_URL}"
+        curl -s -X 'GET' \
+            ${CHILD_TEST_URL} \
+            -H 'accept: application/json' >data/child/test-${ID}.json
+    fi
 done

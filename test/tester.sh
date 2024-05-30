@@ -1,14 +1,12 @@
-ID=661f70c9879917006e985908
+BUILD_IDS=""
 
-FILE=data/child/jdk-${ID}.json
-# RESULT=$(jq '[.[] | select(.type == "Test") | 
-#         {"buildName": .buildName,
-#         "buildDuration": .buildDuration,
-#         "testSummary": .testSummary,
-#         "platform": .buildParams | .[] | select(.name=="PLATFORM") | .value,
-#         "version": .buildParams | .[] | select(.name=="JDK_VERSION") | .value,
-#         "tests": .tests
-#         }]' ${FILE})
+for VERSION in 8 11 17 21
+do 
+    BUILDS_FILE=data/builds-${VERSION}.json
+    if [ -f ${BUILDS_FILE} ]; then
+        BUILD_IDS=${BUILD_IDS}' '$(jq '.ids[]' ${BUILDS_FILE})
+    fi
+done
 
-RESULT=$(jq '.[] | select(.type == "Test") | {"buildName": .buildName}' ${FILE})
-echo ${RESULT} > tmp.json
+RESULT=$(echo ${BUILD_IDS} | jq -n '{ids: [inputs]}')
+echo $RESULT > data/builds.json

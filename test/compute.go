@@ -54,7 +54,7 @@ type Builds struct {
 }
 
 var dataPath = "./data"
-var result Release
+var releaseResult Release
 
 func main() {
 	if len(os.Args) < 2 {
@@ -69,7 +69,7 @@ func main() {
 		dataPath = os.Args[3]
 	}
 
-	result = Release{name, date, 0, make(map[string]Platform)}
+	releaseResult = Release{name, date, 0, make(map[string]Platform)}
 
 	file := dataPath + "/builds.json"
 	data, err := os.ReadFile(file)
@@ -85,7 +85,9 @@ func main() {
 		computeBuild(id)
 	}
 
-	fmt.Printf("%v", result)
+	jsonOutput, _ := json.Marshal(releaseResult)
+	filename := "data/" + name + ".json"
+	os.WriteFile(filename, jsonOutput, 0644)
 }
 
 func computeBuild(id string) {
@@ -103,6 +105,8 @@ func computeBuildData(id string) {
 	}
 	var buildData []interface{}
 	json.Unmarshal(data, &buildData)
+
+	computeData(buildData)
 }
 
 func computeTestData(id string) {
@@ -114,38 +118,42 @@ func computeTestData(id string) {
 	}
 	var testData []interface{}
 	json.Unmarshal(data, &testData)
+	computeData(testData)
+}
 
-	for _, i := range testData {
-		item := i.(map[string]any)
+func computeData(data []interface{}) {
+	for _, i := range data {
+		data := i.(map[string]any)
 
-		platform := item["platform"].(string)
+		releaseResult.Duration += int(data["buildDuration"].(float64))
 
-		addPlatformData(platform, item)
+		platform := data["platform"].(string)
+		addPlatformData(platform, data)
 
-		version := item["version"].(string)
-		addVersionData(platform, version, item)
+		version := data["version"].(string)
+		addVersionData(platform, version, data)
 	}
 }
 
 func addPlatformData(platform string, data map[string]any) {
 	fmt.Printf("Adding platform data for: %s\n", platform)
-	if _, f := result.Platforms[platform]; !f {
+	if _, f := releaseResult.Platforms[platform]; !f {
 		p := Platform{}
 		p.Platform = platform
 		p.Versions = make(map[string]Version)
 		p.TestTargetTotals = TestTotals{0, 0, 0, 0, 0, 0}
 		p.Duration = 0
-		result.Platforms[platform] = p
+		releaseResult.Platforms[platform] = p
 	}
-	p := result.Platforms[platform]
+	p := releaseResult.Platforms[platform]
 	p.Duration += int(data["buildDuration"].(float64))
 	addTestTotals(&p.TestTargetTotals, data)
-	result.Platforms[platform] = p
+	releaseResult.Platforms[platform] = p
 }
 
 func addVersionData(platform string, version string, data map[string]any) {
 	fmt.Printf("Adding version data for: %s %s\n", platform, version)
-	p := result.Platforms[platform]
+	p := releaseResult.Platforms[platform]
 	if _, f := p.Versions[version]; f {
 		v := Version{}
 		v.Version = version
