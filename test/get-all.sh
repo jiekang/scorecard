@@ -4,7 +4,6 @@ if [ -z ${DATE} ]; then
     exit
 fi
 
-for VERSION in 8 11 17 21
-do 
+for VERSION in 8 11 17 21; do
     ./get-data.sh ${VERSION} $DATE
 done

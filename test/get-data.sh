@@ -3,18 +3,25 @@
 # e.g. 17
 VERSION=$1
 if [ -z $VERSION ]; then
-    echo "Usage $0 version-number date"
+    echo "Usage $0 version-number after-date before-date"
     exit
 fi
 
 # e.g. 2024-04-01
-DATE=$2
-if [ -z $DATE ]; then
-    echo "Usage $0 version-number date"
+AFTER_DATE=$2
+if [ -z $AFTER_DATE ]; then
+    echo "Usage $0 version-number after-date before-date"
     exit
 fi
 
-TIMESTAMP=$(date -u -d "${DATE}" "+%s%3N")
+BEFORE_DATE=$3
+if [ -z $BEFORE_DATE ]; then
+    echo "Usage $0 version-number after-date before-date"
+    exit
+fi
+
+AFTER_TIMESTAMP=$(date -u -d "${AFTER_DATE}" "+%s%3N")
+BEFORE_TIMESTAMP=$(date -u -d "${BEFORE_DATE}" "+%s%3N")
 
 mkdir -p data
 
@@ -39,7 +46,7 @@ if [ ! -f ${PIPELINE_INFO} ]; then
         -H 'accept: application/json' >${PIPELINE_INFO}
 fi
 
-BUILD_IDS=$(jq '{ids: [.[] | select(.timestamp > '${TIMESTAMP}') | ._id]}' ${PIPELINE_INFO})
+BUILD_IDS=$(jq '{ids: [.[] | select(.timestamp > '${AFTER_TIMESTAMP}' and .timestamp < '${BEFORE_TIMESTAMP}') | ._id]}' ${PIPELINE_INFO})
 echo ${BUILD_IDS} >data/builds-${VERSION}.json
 
 BUILD_IDS=$(jq '.ids[]' data/builds-${VERSION}.json)
@@ -48,7 +55,6 @@ mkdir -p data/child/
 echo "Processing builds for JDK ${VERSION}"
 
 for ID in $(echo ${BUILD_IDS} | tr -d \"); do
-
     if [ ! -f data/child/jdk-${ID}.json ]; then
         CHILD_JDK_URL="https://trss.adoptium.net/api/getAllChildBuilds?buildNameRegex=%5E(jdk%5B0-9%5D%7B1%2C2%7D%7CBuild_)&parentId=${ID}"
         echo "Acquiring jdk jobs for ${ID} via ${CHILD_JDK_URL}"
