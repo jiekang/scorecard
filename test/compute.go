@@ -39,14 +39,14 @@ type Platform struct {
 	TestTotals        TestTotals
 	MachinesAvailable MachinesAvailable
 	Duration          int
-	Versions          map[string]Version
+	Versions          map[string]*Version
 }
 
 type Release struct {
 	ReleaseName string
 	Date        string
 	Duration    int
-	Platforms   map[string]Platform
+	Platforms   map[string]*Platform
 }
 
 type Builds struct {
@@ -69,7 +69,7 @@ func main() {
 		dataPath = os.Args[3]
 	}
 
-	releaseResult = Release{name, date, 0, make(map[string]Platform)}
+	releaseResult = Release{name, date, 0, make(map[string]*Platform)}
 
 	file := dataPath + "/builds.json"
 	data, err := os.ReadFile(file)
@@ -140,31 +140,29 @@ func addPlatformData(platform string, data map[string]any) {
 	if _, f := releaseResult.Platforms[platform]; !f {
 		p := Platform{}
 		p.Platform = platform
-		p.Versions = make(map[string]Version)
+		p.Versions = make(map[string]*Version)
 		p.TestTargetTotals = TestTotals{0, 0, 0, 0, 0, 0}
 		p.Duration = 0
-		releaseResult.Platforms[platform] = p
+		releaseResult.Platforms[platform] = &p
 	}
 	p := releaseResult.Platforms[platform]
 	p.Duration += int(data["buildDuration"].(float64))
 	addTestTotals(&p.TestTargetTotals, data)
-	releaseResult.Platforms[platform] = p
 }
 
 func addVersionData(platform string, version string, data map[string]any) {
 	fmt.Printf("Adding version data for: %s %s\n", platform, version)
 	p := releaseResult.Platforms[platform]
-	if _, f := p.Versions[version]; f {
+	if _, f := p.Versions[version]; !f {
 		v := Version{}
 		v.Version = version
 		v.TestTargetTotals = TestTotals{0, 0, 0, 0, 0, 0}
 		v.Duration = 0
-		p.Versions[version] = v
+		p.Versions[version] = &v
 	}
 	v := p.Versions[version]
 	v.Duration += int(data["buildDuration"].(float64))
 	addTestTotals(&v.TestTargetTotals, data)
-	p.Versions[version] = v
 }
 
 func addTestTotals(totals *TestTotals, data map[string]any) {
