@@ -4,57 +4,12 @@ import (
 	"encoding/json"
 	"fmt"
 	"os"
+
+	dt "github.com/smlambert/scorecard/test/lib"
 )
 
-type TestTarget struct {
-	Name     string
-	Duration int
-}
-
-type Version struct {
-	Version          string
-	TestTargetTotals TestTotals
-	TestTotals       TestTotals
-	Duration         int
-	TestTargets      map[string]TestTarget
-}
-
-type MachinesAvailable struct {
-	DryRun  int
-	Release int
-}
-
-type TestTotals struct {
-	Total    int
-	Executed int
-	Passed   int
-	Failed   int
-	Disabled int
-	Skipped  int
-}
-
-type Platform struct {
-	Platform          string
-	TestTargetTotals  TestTotals
-	TestTotals        TestTotals
-	MachinesAvailable MachinesAvailable
-	Duration          int
-	Versions          map[string]*Version
-}
-
-type Release struct {
-	ReleaseName string
-	Date        string
-	Duration    int
-	Platforms   map[string]*Platform
-}
-
-type Builds struct {
-	Ids []string
-}
-
 var dataPath = "./data"
-var releaseResult Release
+var releaseResult dt.Release
 
 func main() {
 	if len(os.Args) < 2 {
@@ -69,7 +24,7 @@ func main() {
 		dataPath = os.Args[3]
 	}
 
-	releaseResult = Release{name, date, 0, make(map[string]*Platform)}
+	releaseResult = dt.Release{ReleaseName: name, Date: date, Duration: 0, Platforms: make(map[string]*dt.Platform)}
 
 	file := dataPath + "/builds.json"
 	data, err := os.ReadFile(file)
@@ -78,7 +33,7 @@ func main() {
 		panic(err)
 	}
 
-	var builds Builds
+	var builds dt.Builds
 	json.Unmarshal(data, &builds)
 
 	for _, id := range builds.Ids {
@@ -138,10 +93,10 @@ func computeData(data []interface{}) {
 func addPlatformData(platform string, data map[string]any) {
 	fmt.Printf("Adding platform data for: %s\n", platform)
 	if _, f := releaseResult.Platforms[platform]; !f {
-		p := Platform{}
+		p := dt.Platform{}
 		p.Platform = platform
-		p.Versions = make(map[string]*Version)
-		p.TestTargetTotals = TestTotals{0, 0, 0, 0, 0, 0}
+		p.Versions = make(map[string]*dt.Version)
+		p.TestTargetTotals = dt.TestTotals{Total: 0, Executed: 0, Passed: 0, Failed: 0, Disabled: 0, Skipped: 0}
 		p.Duration = 0
 		releaseResult.Platforms[platform] = &p
 	}
@@ -154,9 +109,9 @@ func addVersionData(platform string, version string, data map[string]any) {
 	fmt.Printf("Adding version data for: %s %s\n", platform, version)
 	p := releaseResult.Platforms[platform]
 	if _, f := p.Versions[version]; !f {
-		v := Version{}
+		v := dt.Version{}
 		v.Version = version
-		v.TestTargetTotals = TestTotals{0, 0, 0, 0, 0, 0}
+		v.TestTargetTotals = dt.TestTotals{Total: 0, Executed: 0, Passed: 0, Failed: 0, Disabled: 0, Skipped: 0}
 		v.Duration = 0
 		p.Versions[version] = &v
 	}
@@ -165,7 +120,7 @@ func addVersionData(platform string, version string, data map[string]any) {
 	addTestTotals(&v.TestTargetTotals, data)
 }
 
-func addTestTotals(totals *TestTotals, data map[string]any) {
+func addTestTotals(totals *dt.TestTotals, data map[string]any) {
 	if data["testSummary"] != nil {
 		summary := data["testSummary"].(map[string]any)
 		totals.Disabled += int(summary["disabled"].(float64))
