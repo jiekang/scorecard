@@ -1,12 +1,10 @@
-BUILD_IDS=""
+go build ./cmd/compute
+go build ./cmd/diff
 
-for VERSION in 8 11 17 21
-do 
-    BUILDS_FILE=data/builds-${VERSION}.json
-    if [ -f ${BUILDS_FILE} ]; then
-        BUILD_IDS=${BUILD_IDS}' '$(jq '.ids[]' ${BUILDS_FILE})
-    fi
-done
+./get-all.sh 2024-01-16 2024-01-30
+./compute.sh January-24 2024-01
 
-RESULT=$(echo ${BUILD_IDS} | jq -n '{ids: [inputs]}')
-echo $RESULT > data/builds.json
+./get-all.sh 2024-04-17 2024-04-24
+./compute.sh April-24 2024-04
+
+./diff data/January-24.json data/April-24.json

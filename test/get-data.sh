@@ -28,16 +28,6 @@ mkdir -p data
 PIPELINE_NAME=release-openjdk${VERSION}-pipeline
 PIPELINE_INFO=data/${PIPELINE_NAME}.json
 
-RELEASE_INFO=data/releases${VERSION}.json
-
-if [ ! -f ${RELEASES_INFO} ]; then
-    RELEASES_URL="https://api.adoptium.net/v3/assets/feature_releases/${VERSION}/ga?heap_size=normal&image_type=jdk&jvm_impl=hotspot&page=0&page_size=10&project=jdk&sort_method=DEFAULT&sort_order=DESC&vendor=eclipse"
-    echo "Processing releases for JDK ${VERSION} via ${RELEASES_URL}"
-    curl -s -X 'GET' \
-        ${RELEASES_URL} \
-        -H 'accept: application/json' >${RELEASE_INFO}
-fi
-
 if [ ! -f ${PIPELINE_INFO} ]; then
     PIPELINE_URL="https://trss.adoptium.net/api/getBuildHistory?buildName=${PIPELINE_NAME}&status=Done&url=https://ci.adoptium.net/job/build-scripts&limit=120"
     echo "Processing pipelines for JDK ${VERSION} via ${PIPELINE_URL}"

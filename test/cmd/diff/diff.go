@@ -17,13 +17,13 @@ func main() {
 	prevFile := os.Args[1]
 	nextFile := os.Args[2]
 
-	data1, err := os.ReadFile(prevFile)
+	prevData, err := os.ReadFile(prevFile)
 	if err != nil {
 		fmt.Println("Unable to read: ", prevFile)
 		panic(err)
 	}
 
-	data2, err := os.ReadFile(nextFile)
+	nextData, err := os.ReadFile(nextFile)
 	if err != nil {
 		fmt.Println("Unable to read: ", nextFile)
 		panic(err)
@@ -31,12 +31,18 @@ func main() {
 
 	var prevRelease dt.Release
 	var nextRelease dt.Release
-	json.Unmarshal(data1, &prevRelease)
-	json.Unmarshal(data2, &nextRelease)
+	err = json.Unmarshal(prevData, &prevRelease)
+	if err != nil {
+		panic(err)
+	}
+	err = json.Unmarshal(nextData, &nextRelease)
+	if err != nil {
+		panic(err)
+	}
 
-	compare(prevRelease, nextRelease)
-}
-
-func compare(prevRelease, nextRelease dt.Release) {
-	panic("unimplemented")
+	result := nextRelease.Diff(prevRelease)
+	jsonOutput, _ := json.Marshal(result)
+	filename := "data/" + prevRelease.ReleaseName + "-" + nextRelease.ReleaseName + ".json"
+	fmt.Println("Writing diff to file: " + filename)
+	os.WriteFile(filename, jsonOutput, 0644)
 }

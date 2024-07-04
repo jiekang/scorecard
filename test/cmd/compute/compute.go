@@ -24,8 +24,7 @@ func main() {
 		dataPath = os.Args[3]
 	}
 
-	releaseResult = dt.Release{ReleaseName: name, Date: date, Duration: 0, Platforms: make(map[string]*dt.Platform)}
-
+	releaseResult = dt.Release{ReleaseName: name, Date: date, Duration: 0, Platforms: make(dt.Platforms), TestTargetTotals: dt.TestTotals{Total: 0, Executed: 0, Passed: 0, Failed: 0, Disabled: 0, Skipped: 0}}
 	file := dataPath + "/builds.json"
 	data, err := os.ReadFile(file)
 	if err != nil {
@@ -34,8 +33,10 @@ func main() {
 	}
 
 	var builds dt.Builds
-	json.Unmarshal(data, &builds)
-
+	err = json.Unmarshal(data, &builds)
+	if err != nil {
+		panic(err)
+	}
 	for _, id := range builds.Ids {
 		computeBuild(id)
 	}
@@ -80,7 +81,8 @@ func computeData(data []interface{}) {
 	for _, i := range data {
 		data := i.(map[string]any)
 
-		releaseResult.Duration += int(data["buildDuration"].(float64))
+		releaseResult.Duration += dt.Duration(data["buildDuration"].(float64))
+		addTestTotals(&releaseResult.TestTargetTotals, data)
 
 		platform := data["platform"].(string)
 		addPlatformData(platform, data)
@@ -101,7 +103,7 @@ func addPlatformData(platform string, data map[string]any) {
 		releaseResult.Platforms[platform] = &p
 	}
 	p := releaseResult.Platforms[platform]
-	p.Duration += int(data["buildDuration"].(float64))
+	p.Duration += dt.Duration(data["buildDuration"].(float64))
 	addTestTotals(&p.TestTargetTotals, data)
 }
 
@@ -116,7 +118,7 @@ func addVersionData(platform string, version string, data map[string]any) {
 		p.Versions[version] = &v
 	}
 	v := p.Versions[version]
-	v.Duration += int(data["buildDuration"].(float64))
+	v.Duration += dt.Duration(data["buildDuration"].(float64))
 	addTestTotals(&v.TestTargetTotals, data)
 }
 
