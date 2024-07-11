@@ -2,7 +2,7 @@
 
 DATA_FILE=data/machine-data.json
 
-RESULT_FILE=data/machine-results.json
+RESULT_FILE=data/test-machine-results.json
 
 RESULT=$(jq '[.computer | .[] |
     {
@@ -15,7 +15,3 @@ RESULT=$(jq '[.computer | .[] |
     ' ${DATA_FILE})
 
 echo $RESULT > ${RESULT_FILE}
-
-# linux x86, aarch64, ppc64, s390x, aarch32
-# mac x86, aarch64
-# windows x86, aarch64

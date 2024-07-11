@@ -6,7 +6,7 @@ import (
 	"os"
 )
 
-var dataFile = "./data/machine-results.json"
+var dataFile = "./data/test-machine-results.json"
 
 type Machine struct {
 	Online  int
@@ -29,6 +29,10 @@ func main() {
 		panic(err)
 	}
 	osMap := make(map[string]map[string]*Machine)
+	all := Machine{Online: 0, Offline: 0}
+
+	osMap["all"] = make(map[string]*Machine)
+	osMap["all"]["all"] = &all
 	for _, machine := range input {
 		os := machine["os"].(string)
 		if _, f := osMap[os]; !f {
@@ -44,12 +48,14 @@ func main() {
 		offline := machine["offline"].(bool)
 		if offline {
 			archMap[arch].Offline++
+			all.Offline++
 		} else {
 			archMap[arch].Online++
+			all.Online++
 		}
 	}
 
 	jsonOutput, _ := json.Marshal(osMap)
-	filename := "data/machine-counts.json"
+	filename := "data/test-machine-counts.json"
 	os.WriteFile(filename, jsonOutput, 0644)
 }
