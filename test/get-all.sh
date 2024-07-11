@@ -11,5 +11,5 @@ if [ -z ${BEFORE_DATE} ]; then
 fi
 
 for VERSION in 8 11 17 21; do
-    ./get-data.sh ${VERSION} ${AFTER_DATE} ${BEFORE_DATE}
+    ./get-test-data.sh ${VERSION} ${AFTER_DATE} ${BEFORE_DATE}
 done
