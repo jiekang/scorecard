@@ -1,0 +1,109 @@
+{
+    "ReleaseName": "January-24",
+    "Date": "2024-01",
+    "Duration": 241789837,
+    "TestTargetTotals": {
+        "Total": 1010,
+        "Executed": 318,
+        "Passed": 310,
+        "Failed": 8,
+        "Disabled": 67,
+        "Skipped": 625
+    },
+    "Platforms": {
+        "arm_linux": {
+            "Platform": "arm_linux",
+            "TestTargetTotals": {
+                "Total": 298,
+                "Executed": 107,
+                "Passed": 100,
+                "Failed": 7,
+                "Disabled": 16,
+                "Skipped": 175
+            },
+            "TestTotals": {
+                "Total": 0,
+                "Executed": 0,
+                "Passed": 0,
+                "Failed": 0,
+                "Disabled": 0,
+                "Skipped": 0
+            },
+            "MachinesAvailable": {
+                "DryRun": 0,
+                "Release": 0
+            },
+            "Duration": 119953390,
+            "Versions": {
+                "8": {
+                    "Version": "8",
+                    "TestTargetTotals": {
+                        "Total": 298,
+                        "Executed": 107,
+                        "Passed": 100,
+                        "Failed": 7,
+                        "Disabled": 16,
+                        "Skipped": 175
+                    },
+                    "TestTotals": {
+                        "Total": 0,
+                        "Executed": 0,
+                        "Passed": 0,
+                        "Failed": 0,
+                        "Disabled": 0,
+                        "Skipped": 0
+                    },
+                    "Duration": 119953390,
+                    "TestTargets": null
+                }
+            }
+        },
+        "x86-64_mac": {
+            "Platform": "x86-64_mac",
+            "TestTargetTotals": {
+                "Total": 712,
+                "Executed": 211,
+                "Passed": 210,
+                "Failed": 1,
+                "Disabled": 51,
+                "Skipped": 450
+            },
+            "TestTotals": {
+                "Total": 0,
+                "Executed": 0,
+                "Passed": 0,
+                "Failed": 0,
+                "Disabled": 0,
+                "Skipped": 0
+            },
+            "MachinesAvailable": {
+                "DryRun": 0,
+                "Release": 0
+            },
+            "Duration": 121836447,
+            "Versions": {
+                "11": {
+                    "Version": "11",
+                    "TestTargetTotals": {
+                        "Total": 712,
+                        "Executed": 211,
+                        "Passed": 210,
+                        "Failed": 1,
+                        "Disabled": 51,
+                        "Skipped": 450
+                    },
+                    "TestTotals": {
+                        "Total": 0,
+                        "Executed": 0,
+                        "Passed": 0,
+                        "Failed": 0,
+                        "Disabled": 0,
+                        "Skipped": 0
+                    },
+                    "Duration": 121836447,
+                    "TestTargets": null
+                }
+            }
+        }
+    }
+}

@@ -1,0 +1,1287 @@
+{
+    "ReleaseName": "April-24 July-24",
+    "Date": "comparison",
+    "Duration": 11649043032,
+    "TestTargetTotals": {
+        "Total": 409,
+        "Executed": 404,
+        "Passed": 509,
+        "Failed": -105,
+        "Disabled": 122,
+        "Skipped": -117
+    },
+    "Platforms": {
+        "aarch64_alpine-linux": {
+            "Platform": "aarch64_alpine-linux",
+            "TestTargetTotals": {
+                "Total": 95,
+                "Executed": 44,
+                "Passed": 46,
+                "Failed": -2,
+                "Disabled": 25,
+                "Skipped": 26
+            },
+            "TestTotals": {
+                "Total": 0,
+                "Executed": 0,
+                "Passed": 0,
+                "Failed": 0,
+                "Disabled": 0,
+                "Skipped": 0
+            },
+            "MachinesAvailable": {
+                "DryRun": 0,
+                "Release": 0
+            },
+            "Duration": 1040852686,
+            "Versions": {
+                "21": {
+                    "Version": "21",
+                    "TestTargetTotals": {
+                        "Total": 95,
+                        "Executed": 44,
+                        "Passed": 46,
+                        "Failed": -2,
+                        "Disabled": 25,
+                        "Skipped": 26
+                    },
+                    "TestTotals": {
+                        "Total": 0,
+                        "Executed": 0,
+                        "Passed": 0,
+                        "Failed": 0,
+                        "Disabled": 0,
+                        "Skipped": 0
+                    },
+                    "Duration": 1040852686,
+                    "TestTargets": null
+                }
+            }
+        },
+        "aarch64_linux": {
+            "Platform": "aarch64_linux",
+            "TestTargetTotals": {
+                "Total": 179,
+                "Executed": 80,
+                "Passed": 82,
+                "Failed": -2,
+                "Disabled": 46,
+                "Skipped": 53
+            },
+            "TestTotals": {
+                "Total": 0,
+                "Executed": 0,
+                "Passed": 0,
+                "Failed": 0,
+                "Disabled": 0,
+                "Skipped": 0
+            },
+            "MachinesAvailable": {
+                "DryRun": 0,
+                "Release": 0
+            },
+            "Duration": 839585116,
+            "Versions": {
+                "11": {
+                    "Version": "11",
+                    "TestTargetTotals": {
+                        "Total": 93,
+                        "Executed": 46,
+                        "Passed": 45,
+                        "Failed": 1,
+                        "Disabled": 22,
+                        "Skipped": 25
+                    },
+                    "TestTotals": {
+                        "Total": 0,
+                        "Executed": 0,
+                        "Passed": 0,
+                        "Failed": 0,
+                        "Disabled": 0,
+                        "Skipped": 0
+                    },
+                    "Duration": 290734252,
+                    "TestTargets": null
+                },
+                "17": {
+                    "Version": "17",
+                    "TestTargetTotals": {
+                        "Total": 81,
+                        "Executed": 33,
+                        "Passed": 32,
+                        "Failed": 1,
+                        "Disabled": 22,
+                        "Skipped": 26
+                    },
+                    "TestTotals": {
+                        "Total": 0,
+                        "Executed": 0,
+                        "Passed": 0,
+                        "Failed": 0,
+                        "Disabled": 0,
+                        "Skipped": 0
+                    },
+                    "Duration": 119592399,
+                    "TestTargets": null
+                },
+                "21": {
+                    "Version": "21",
+                    "TestTargetTotals": {
+                        "Total": 4,
+                        "Executed": 2,
+                        "Passed": 2,
+                        "Failed": 0,
+                        "Disabled": 1,
+                        "Skipped": 1
+                    },
+                    "TestTotals": {
+                        "Total": 0,
+                        "Executed": 0,
+                        "Passed": 0,
+                        "Failed": 0,
+                        "Disabled": 0,
+                        "Skipped": 0
+                    },
+                    "Duration": 404814222,
+                    "TestTargets": null
+                },
+                "8": {
+                    "Version": "8",
+                    "TestTargetTotals": {
+                        "Total": 1,
+                        "Executed": -1,
+                        "Passed": 3,
+                        "Failed": -4,
+                        "Disabled": 1,
+                        "Skipped": 1
+                    },
+                    "TestTotals": {
+                        "Total": 0,
+                        "Executed": 0,
+                        "Passed": 0,
+                        "Failed": 0,
+                        "Disabled": 0,
+                        "Skipped": 0
+                    },
+                    "Duration": 24444243,
+                    "TestTargets": null
+                }
+            }
+        },
+        "aarch64_mac": {
+            "Platform": "aarch64_mac",
+            "TestTargetTotals": {
+                "Total": -639,
+                "Executed": -176,
+                "Passed": -170,
+                "Failed": -6,
+                "Disabled": -26,
+                "Skipped": -437
+            },
+            "TestTotals": {
+                "Total": 0,
+                "Executed": 0,
+                "Passed": 0,
+                "Failed": 0,
+                "Disabled": 0,
+                "Skipped": 0
+            },
+            "MachinesAvailable": {
+                "DryRun": 0,
+                "Release": 0
+            },
+            "Duration": 8031137,
+            "Versions": {
+                "17": {
+                    "Version": "17",
+                    "TestTargetTotals": {
+                        "Total": 43,
+                        "Executed": 17,
+                        "Passed": 17,
+                        "Failed": 0,
+                        "Disabled": 14,
+                        "Skipped": 12
+                    },
+                    "TestTotals": {
+                        "Total": 0,
+                        "Executed": 0,
+                        "Passed": 0,
+                        "Failed": 0,
+                        "Disabled": 0,
+                        "Skipped": 0
+                    },
+                    "Duration": 28315017,
+                    "TestTargets": null
+                },
+                "21": {
+                    "Version": "21",
+                    "TestTargetTotals": {
+                        "Total": 27,
+                        "Executed": 25,
+                        "Passed": 30,
+                        "Failed": -5,
+                        "Disabled": 1,
+                        "Skipped": 1
+                    },
+                    "TestTotals": {
+                        "Total": 0,
+                        "Executed": 0,
+                        "Passed": 0,
+                        "Failed": 0,
+                        "Disabled": 0,
+                        "Skipped": 0
+                    },
+                    "Duration": 25221352,
+                    "TestTargets": null
+                }
+            }
+        },
+        "arm_linux": {
+            "Platform": "arm_linux",
+            "TestTargetTotals": {
+                "Total": -416,
+                "Executed": -153,
+                "Passed": -143,
+                "Failed": -10,
+                "Disabled": -45,
+                "Skipped": -218
+            },
+            "TestTotals": {
+                "Total": 0,
+                "Executed": 0,
+                "Passed": 0,
+                "Failed": 0,
+                "Disabled": 0,
+                "Skipped": 0
+            },
+            "MachinesAvailable": {
+                "DryRun": 0,
+                "Release": 0
+            },
+            "Duration": 43793418,
+            "Versions": {
+                "11": {
+                    "Version": "11",
+                    "TestTargetTotals": {
+                        "Total": -1,
+                        "Executed": -4,
+                        "Passed": -4,
+                        "Failed": 0,
+                        "Disabled": 1,
+                        "Skipped": 2
+                    },
+                    "TestTotals": {
+                        "Total": 0,
+                        "Executed": 0,
+                        "Passed": 0,
+                        "Failed": 0,
+                        "Disabled": 0,
+                        "Skipped": 0
+                    },
+                    "Duration": 41366837,
+                    "TestTargets": null
+                },
+                "17": {
+                    "Version": "17",
+                    "TestTargetTotals": {
+                        "Total": -3,
+                        "Executed": -2,
+                        "Passed": -2,
+                        "Failed": 0,
+                        "Disabled": -2,
+                        "Skipped": 1
+                    },
+                    "TestTotals": {
+                        "Total": 0,
+                        "Executed": 0,
+                        "Passed": 0,
+                        "Failed": 0,
+                        "Disabled": 0,
+                        "Skipped": 0
+                    },
+                    "Duration": 64405993,
+                    "TestTargets": null
+                }
+            }
+        },
+        "ppc64_aix": {
+            "Platform": "ppc64_aix",
+            "TestTargetTotals": {
+                "Total": 40,
+                "Executed": 26,
+                "Passed": 33,
+                "Failed": -7,
+                "Disabled": 13,
+                "Skipped": 1
+            },
+            "TestTotals": {
+                "Total": 0,
+                "Executed": 0,
+                "Passed": 0,
+                "Failed": 0,
+                "Disabled": 0,
+                "Skipped": 0
+            },
+            "MachinesAvailable": {
+                "DryRun": 0,
+                "Release": 0
+            },
+            "Duration": 764135970,
+            "Versions": {
+                "11": {
+                    "Version": "11",
+                    "TestTargetTotals": {
+                        "Total": 13,
+                        "Executed": 9,
+                        "Passed": 10,
+                        "Failed": -1,
+                        "Disabled": 4,
+                        "Skipped": 0
+                    },
+                    "TestTotals": {
+                        "Total": 0,
+                        "Executed": 0,
+                        "Passed": 0,
+                        "Failed": 0,
+                        "Disabled": 0,
+                        "Skipped": 0
+                    },
+                    "Duration": 105840803,
+                    "TestTargets": null
+                },
+                "17": {
+                    "Version": "17",
+                    "TestTargetTotals": {
+                        "Total": 11,
+                        "Executed": 7,
+                        "Passed": 9,
+                        "Failed": -2,
+                        "Disabled": 4,
+                        "Skipped": 0
+                    },
+                    "TestTotals": {
+                        "Total": 0,
+                        "Executed": 0,
+                        "Passed": 0,
+                        "Failed": 0,
+                        "Disabled": 0,
+                        "Skipped": 0
+                    },
+                    "Duration": 114118975,
+                    "TestTargets": null
+                },
+                "21": {
+                    "Version": "21",
+                    "TestTargetTotals": {
+                        "Total": 14,
+                        "Executed": 10,
+                        "Passed": 10,
+                        "Failed": 0,
+                        "Disabled": 4,
+                        "Skipped": 0
+                    },
+                    "TestTotals": {
+                        "Total": 0,
+                        "Executed": 0,
+                        "Passed": 0,
+                        "Failed": 0,
+                        "Disabled": 0,
+                        "Skipped": 0
+                    },
+                    "Duration": 482200406,
+                    "TestTargets": null
+                },
+                "8": {
+                    "Version": "8",
+                    "TestTargetTotals": {
+                        "Total": 2,
+                        "Executed": 0,
+                        "Passed": 4,
+                        "Failed": -4,
+                        "Disabled": 1,
+                        "Skipped": 1
+                    },
+                    "TestTotals": {
+                        "Total": 0,
+                        "Executed": 0,
+                        "Passed": 0,
+                        "Failed": 0,
+                        "Disabled": 0,
+                        "Skipped": 0
+                    },
+                    "Duration": 61975786,
+                    "TestTargets": null
+                }
+            }
+        },
+        "ppc64le_linux": {
+            "Platform": "ppc64le_linux",
+            "TestTargetTotals": {
+                "Total": 20,
+                "Executed": 6,
+                "Passed": 15,
+                "Failed": -9,
+                "Disabled": 13,
+                "Skipped": 1
+            },
+            "TestTotals": {
+                "Total": 0,
+                "Executed": 0,
+                "Passed": 0,
+                "Failed": 0,
+                "Disabled": 0,
+                "Skipped": 0
+            },
+            "MachinesAvailable": {
+                "DryRun": 0,
+                "Release": 0
+            },
+            "Duration": 543365902,
+            "Versions": {
+                "11": {
+                    "Version": "11",
+                    "TestTargetTotals": {
+                        "Total": 13,
+                        "Executed": 9,
+                        "Passed": 10,
+                        "Failed": -1,
+                        "Disabled": 4,
+                        "Skipped": 0
+                    },
+                    "TestTotals": {
+                        "Total": 0,
+                        "Executed": 0,
+                        "Passed": 0,
+                        "Failed": 0,
+                        "Disabled": 0,
+                        "Skipped": 0
+                    },
+                    "Duration": 155026436,
+                    "TestTargets": null
+                },
+                "17": {
+                    "Version": "17",
+                    "TestTargetTotals": {
+                        "Total": 4,
+                        "Executed": 0,
+                        "Passed": 1,
+                        "Failed": -1,
+                        "Disabled": 4,
+                        "Skipped": 0
+                    },
+                    "TestTotals": {
+                        "Total": 0,
+                        "Executed": 0,
+                        "Passed": 0,
+                        "Failed": 0,
+                        "Disabled": 0,
+                        "Skipped": 0
+                    },
+                    "Duration": 135827141,
+                    "TestTargets": null
+                },
+                "21": {
+                    "Version": "21",
+                    "TestTargetTotals": {
+                        "Total": -1,
+                        "Executed": -5,
+                        "Passed": 2,
+                        "Failed": -7,
+                        "Disabled": 4,
+                        "Skipped": 0
+                    },
+                    "TestTotals": {
+                        "Total": 0,
+                        "Executed": 0,
+                        "Passed": 0,
+                        "Failed": 0,
+                        "Disabled": 0,
+                        "Skipped": 0
+                    },
+                    "Duration": 201376015,
+                    "TestTargets": null
+                },
+                "8": {
+                    "Version": "8",
+                    "TestTargetTotals": {
+                        "Total": 4,
+                        "Executed": 2,
+                        "Passed": 2,
+                        "Failed": 0,
+                        "Disabled": 1,
+                        "Skipped": 1
+                    },
+                    "TestTotals": {
+                        "Total": 0,
+                        "Executed": 0,
+                        "Passed": 0,
+                        "Failed": 0,
+                        "Disabled": 0,
+                        "Skipped": 0
+                    },
+                    "Duration": 51136310,
+                    "TestTargets": null
+                }
+            }
+        },
+        "riscv64_linux": {
+            "Platform": "riscv64_linux",
+            "TestTargetTotals": {
+                "Total": 837,
+                "Executed": 326,
+                "Passed": 317,
+                "Failed": 9,
+                "Disabled": 68,
+                "Skipped": 443
+            },
+            "TestTotals": {
+                "Total": 0,
+                "Executed": 0,
+                "Passed": 0,
+                "Failed": 0,
+                "Disabled": 0,
+                "Skipped": 0
+            },
+            "MachinesAvailable": {
+                "DryRun": 0,
+                "Release": 0
+            },
+            "Duration": 1928392933,
+            "Versions": {
+                "17": {
+                    "Version": "17",
+                    "TestTargetTotals": {
+                        "Total": 849,
+                        "Executed": 332,
+                        "Passed": 326,
+                        "Failed": 6,
+                        "Disabled": 74,
+                        "Skipped": 443
+                    },
+                    "TestTotals": {
+                        "Total": 0,
+                        "Executed": 0,
+                        "Passed": 0,
+                        "Failed": 0,
+                        "Disabled": 0,
+                        "Skipped": 0
+                    },
+                    "Duration": 758020875,
+                    "TestTargets": null
+                },
+                "21": {
+                    "Version": "21",
+                    "TestTargetTotals": {
+                        "Total": -12,
+                        "Executed": -6,
+                        "Passed": -9,
+                        "Failed": 3,
+                        "Disabled": -6,
+                        "Skipped": 0
+                    },
+                    "TestTotals": {
+                        "Total": 0,
+                        "Executed": 0,
+                        "Passed": 0,
+                        "Failed": 0,
+                        "Disabled": 0,
+                        "Skipped": 0
+                    },
+                    "Duration": 1170372058,
+                    "TestTargets": null
+                }
+            }
+        },
+        "s390x_linux": {
+            "Platform": "s390x_linux",
+            "TestTargetTotals": {
+                "Total": -21,
+                "Executed": -33,
+                "Passed": 6,
+                "Failed": -39,
+                "Disabled": 12,
+                "Skipped": 0
+            },
+            "TestTotals": {
+                "Total": 0,
+                "Executed": 0,
+                "Passed": 0,
+                "Failed": 0,
+                "Disabled": 0,
+                "Skipped": 0
+            },
+            "MachinesAvailable": {
+                "DryRun": 0,
+                "Release": 0
+            },
+            "Duration": 522048550,
+            "Versions": {
+                "11": {
+                    "Version": "11",
+                    "TestTargetTotals": {
+                        "Total": -11,
+                        "Executed": -15,
+                        "Passed": 5,
+                        "Failed": -20,
+                        "Disabled": 4,
+                        "Skipped": 0
+                    },
+                    "TestTotals": {
+                        "Total": 0,
+                        "Executed": 0,
+                        "Passed": 0,
+                        "Failed": 0,
+                        "Disabled": 0,
+                        "Skipped": 0
+                    },
+                    "Duration": 354803595,
+                    "TestTargets": null
+                },
+                "17": {
+                    "Version": "17",
+                    "TestTargetTotals": {
+                        "Total": -12,
+                        "Executed": -16,
+                        "Passed": 4,
+                        "Failed": -20,
+                        "Disabled": 4,
+                        "Skipped": 0
+                    },
+                    "TestTotals": {
+                        "Total": 0,
+                        "Executed": 0,
+                        "Passed": 0,
+                        "Failed": 0,
+                        "Disabled": 0,
+                        "Skipped": 0
+                    },
+                    "Duration": -15708038,
+                    "TestTargets": null
+                },
+                "21": {
+                    "Version": "21",
+                    "TestTargetTotals": {
+                        "Total": 2,
+                        "Executed": -2,
+                        "Passed": -3,
+                        "Failed": 1,
+                        "Disabled": 4,
+                        "Skipped": 0
+                    },
+                    "TestTotals": {
+                        "Total": 0,
+                        "Executed": 0,
+                        "Passed": 0,
+                        "Failed": 0,
+                        "Disabled": 0,
+                        "Skipped": 0
+                    },
+                    "Duration": 182952993,
+                    "TestTargets": null
+                }
+            }
+        },
+        "sparcv9_solaris": {
+            "Platform": "sparcv9_solaris",
+            "TestTargetTotals": {
+                "Total": -406,
+                "Executed": -96,
+                "Passed": -95,
+                "Failed": -1,
+                "Disabled": -35,
+                "Skipped": -275
+            },
+            "TestTotals": {
+                "Total": 0,
+                "Executed": 0,
+                "Passed": 0,
+                "Failed": 0,
+                "Disabled": 0,
+                "Skipped": 0
+            },
+            "MachinesAvailable": {
+                "DryRun": 0,
+                "Release": 0
+            },
+            "Duration": 28275158,
+            "Versions": {
+                "8": {
+                    "Version": "8",
+                    "TestTargetTotals": {
+                        "Total": -406,
+                        "Executed": -96,
+                        "Passed": -95,
+                        "Failed": -1,
+                        "Disabled": -35,
+                        "Skipped": -275
+                    },
+                    "TestTotals": {
+                        "Total": 0,
+                        "Executed": 0,
+                        "Passed": 0,
+                        "Failed": 0,
+                        "Disabled": 0,
+                        "Skipped": 0
+                    },
+                    "Duration": 28275158,
+                    "TestTargets": null
+                }
+            }
+        },
+        "x86-32_windows": {
+            "Platform": "x86-32_windows",
+            "TestTargetTotals": {
+                "Total": 20,
+                "Executed": 9,
+                "Passed": 4,
+                "Failed": 5,
+                "Disabled": 3,
+                "Skipped": 8
+            },
+            "TestTotals": {
+                "Total": 0,
+                "Executed": 0,
+                "Passed": 0,
+                "Failed": 0,
+                "Disabled": 0,
+                "Skipped": 0
+            },
+            "MachinesAvailable": {
+                "DryRun": 0,
+                "Release": 0
+            },
+            "Duration": -63375437,
+            "Versions": {
+                "11": {
+                    "Version": "11",
+                    "TestTargetTotals": {
+                        "Total": 5,
+                        "Executed": 2,
+                        "Passed": 2,
+                        "Failed": 0,
+                        "Disabled": 1,
+                        "Skipped": 2
+                    },
+                    "TestTotals": {
+                        "Total": 0,
+                        "Executed": 0,
+                        "Passed": 0,
+                        "Failed": 0,
+                        "Disabled": 0,
+                        "Skipped": 0
+                    },
+                    "Duration": -24265223,
+                    "TestTargets": null
+                },
+                "17": {
+                    "Version": "17",
+                    "TestTargetTotals": {
+                        "Total": 8,
+                        "Executed": 5,
+                        "Passed": 2,
+                        "Failed": 3,
+                        "Disabled": 1,
+                        "Skipped": 2
+                    },
+                    "TestTotals": {
+                        "Total": 0,
+                        "Executed": 0,
+                        "Passed": 0,
+                        "Failed": 0,
+                        "Disabled": 0,
+                        "Skipped": 0
+                    },
+                    "Duration": 7726008,
+                    "TestTargets": null
+                },
+                "8": {
+                    "Version": "8",
+                    "TestTargetTotals": {
+                        "Total": 7,
+                        "Executed": 2,
+                        "Passed": 0,
+                        "Failed": 2,
+                        "Disabled": 1,
+                        "Skipped": 4
+                    },
+                    "TestTotals": {
+                        "Total": 0,
+                        "Executed": 0,
+                        "Passed": 0,
+                        "Failed": 0,
+                        "Disabled": 0,
+                        "Skipped": 0
+                    },
+                    "Duration": -46836222,
+                    "TestTargets": null
+                }
+            }
+        },
+        "x86-64_alpine-linux": {
+            "Platform": "x86-64_alpine-linux",
+            "TestTargetTotals": {
+                "Total": 759,
+                "Executed": 316,
+                "Passed": 327,
+                "Failed": -11,
+                "Disabled": 56,
+                "Skipped": 387
+            },
+            "TestTotals": {
+                "Total": 0,
+                "Executed": 0,
+                "Passed": 0,
+                "Failed": 0,
+                "Disabled": 0,
+                "Skipped": 0
+            },
+            "MachinesAvailable": {
+                "DryRun": 0,
+                "Release": 0
+            },
+            "Duration": 2476878657,
+            "Versions": {
+                "11": {
+                    "Version": "11",
+                    "TestTargetTotals": {
+                        "Total": 750,
+                        "Executed": 313,
+                        "Passed": 313,
+                        "Failed": 0,
+                        "Disabled": 53,
+                        "Skipped": 384
+                    },
+                    "TestTotals": {
+                        "Total": 0,
+                        "Executed": 0,
+                        "Passed": 0,
+                        "Failed": 0,
+                        "Disabled": 0,
+                        "Skipped": 0
+                    },
+                    "Duration": 1375261673,
+                    "TestTargets": null
+                },
+                "17": {
+                    "Version": "17",
+                    "TestTargetTotals": {
+                        "Total": 4,
+                        "Executed": 2,
+                        "Passed": 5,
+                        "Failed": -3,
+                        "Disabled": 1,
+                        "Skipped": 1
+                    },
+                    "TestTotals": {
+                        "Total": 0,
+                        "Executed": 0,
+                        "Passed": 0,
+                        "Failed": 0,
+                        "Disabled": 0,
+                        "Skipped": 0
+                    },
+                    "Duration": 404336471,
+                    "TestTargets": null
+                },
+                "21": {
+                    "Version": "21",
+                    "TestTargetTotals": {
+                        "Total": 2,
+                        "Executed": 0,
+                        "Passed": 7,
+                        "Failed": -7,
+                        "Disabled": 1,
+                        "Skipped": 1
+                    },
+                    "TestTotals": {
+                        "Total": 0,
+                        "Executed": 0,
+                        "Passed": 0,
+                        "Failed": 0,
+                        "Disabled": 0,
+                        "Skipped": 0
+                    },
+                    "Duration": 613149493,
+                    "TestTargets": null
+                },
+                "8": {
+                    "Version": "8",
+                    "TestTargetTotals": {
+                        "Total": 3,
+                        "Executed": 1,
+                        "Passed": 2,
+                        "Failed": -1,
+                        "Disabled": 1,
+                        "Skipped": 1
+                    },
+                    "TestTotals": {
+                        "Total": 0,
+                        "Executed": 0,
+                        "Passed": 0,
+                        "Failed": 0,
+                        "Disabled": 0,
+                        "Skipped": 0
+                    },
+                    "Duration": 84131020,
+                    "TestTargets": null
+                }
+            }
+        },
+        "x86-64_linux": {
+            "Platform": "x86-64_linux",
+            "TestTargetTotals": {
+                "Total": 7,
+                "Executed": -1,
+                "Passed": 12,
+                "Failed": -13,
+                "Disabled": 4,
+                "Skipped": 4
+            },
+            "TestTotals": {
+                "Total": 0,
+                "Executed": 0,
+                "Passed": 0,
+                "Failed": 0,
+                "Disabled": 0,
+                "Skipped": 0
+            },
+            "MachinesAvailable": {
+                "DryRun": 0,
+                "Release": 0
+            },
+            "Duration": 555022034,
+            "Versions": {
+                "11": {
+                    "Version": "11",
+                    "TestTargetTotals": {
+                        "Total": 5,
+                        "Executed": 3,
+                        "Passed": 3,
+                        "Failed": 0,
+                        "Disabled": 1,
+                        "Skipped": 1
+                    },
+                    "TestTotals": {
+                        "Total": 0,
+                        "Executed": 0,
+                        "Passed": 0,
+                        "Failed": 0,
+                        "Disabled": 0,
+                        "Skipped": 0
+                    },
+                    "Duration": 160530952,
+                    "TestTargets": null
+                },
+                "17": {
+                    "Version": "17",
+                    "TestTargetTotals": {
+                        "Total": 2,
+                        "Executed": 0,
+                        "Passed": 3,
+                        "Failed": -3,
+                        "Disabled": 1,
+                        "Skipped": 1
+                    },
+                    "TestTotals": {
+                        "Total": 0,
+                        "Executed": 0,
+                        "Passed": 0,
+                        "Failed": 0,
+                        "Disabled": 0,
+                        "Skipped": 0
+                    },
+                    "Duration": 122375668,
+                    "TestTargets": null
+                },
+                "21": {
+                    "Version": "21",
+                    "TestTargetTotals": {
+                        "Total": 2,
+                        "Executed": 0,
+                        "Passed": 4,
+                        "Failed": -4,
+                        "Disabled": 1,
+                        "Skipped": 1
+                    },
+                    "TestTotals": {
+                        "Total": 0,
+                        "Executed": 0,
+                        "Passed": 0,
+                        "Failed": 0,
+                        "Disabled": 0,
+                        "Skipped": 0
+                    },
+                    "Duration": 244199165,
+                    "TestTargets": null
+                },
+                "8": {
+                    "Version": "8",
+                    "TestTargetTotals": {
+                        "Total": -2,
+                        "Executed": -4,
+                        "Passed": 2,
+                        "Failed": -6,
+                        "Disabled": 1,
+                        "Skipped": 1
+                    },
+                    "TestTotals": {
+                        "Total": 0,
+                        "Executed": 0,
+                        "Passed": 0,
+                        "Failed": 0,
+                        "Disabled": 0,
+                        "Skipped": 0
+                    },
+                    "Duration": 27916249,
+                    "TestTargets": null
+                }
+            }
+        },
+        "x86-64_mac": {
+            "Platform": "x86-64_mac",
+            "TestTargetTotals": {
+                "Total": -717,
+                "Executed": -209,
+                "Passed": -220,
+                "Failed": 11,
+                "Disabled": -48,
+                "Skipped": -460
+            },
+            "TestTotals": {
+                "Total": 0,
+                "Executed": 0,
+                "Passed": 0,
+                "Failed": 0,
+                "Disabled": 0,
+                "Skipped": 0
+            },
+            "MachinesAvailable": {
+                "DryRun": 0,
+                "Release": 0
+            },
+            "Duration": -15836675,
+            "Versions": {
+                "17": {
+                    "Version": "17",
+                    "TestTargetTotals": {
+                        "Total": 5,
+                        "Executed": 3,
+                        "Passed": 3,
+                        "Failed": 0,
+                        "Disabled": 1,
+                        "Skipped": 1
+                    },
+                    "TestTotals": {
+                        "Total": 0,
+                        "Executed": 0,
+                        "Passed": 0,
+                        "Failed": 0,
+                        "Disabled": 0,
+                        "Skipped": 0
+                    },
+                    "Duration": 162394336,
+                    "TestTargets": null
+                },
+                "21": {
+                    "Version": "21",
+                    "TestTargetTotals": {
+                        "Total": 15,
+                        "Executed": 13,
+                        "Passed": 9,
+                        "Failed": 4,
+                        "Disabled": 1,
+                        "Skipped": 1
+                    },
+                    "TestTotals": {
+                        "Total": 0,
+                        "Executed": 0,
+                        "Passed": 0,
+                        "Failed": 0,
+                        "Disabled": 0,
+                        "Skipped": 0
+                    },
+                    "Duration": 978574,
+                    "TestTargets": null
+                },
+                "8": {
+                    "Version": "8",
+                    "TestTargetTotals": {
+                        "Total": 9,
+                        "Executed": 7,
+                        "Passed": -1,
+                        "Failed": 8,
+                        "Disabled": 1,
+                        "Skipped": 1
+                    },
+                    "TestTotals": {
+                        "Total": 0,
+                        "Executed": 0,
+                        "Passed": 0,
+                        "Failed": 0,
+                        "Disabled": 0,
+                        "Skipped": 0
+                    },
+                    "Duration": 68377178,
+                    "TestTargets": null
+                }
+            }
+        },
+        "x86-64_solaris": {
+            "Platform": "x86-64_solaris",
+            "TestTargetTotals": {
+                "Total": -98,
+                "Executed": -28,
+                "Passed": -24,
+                "Failed": -4,
+                "Disabled": -17,
+                "Skipped": -53
+            },
+            "TestTotals": {
+                "Total": 0,
+                "Executed": 0,
+                "Passed": 0,
+                "Failed": 0,
+                "Disabled": 0,
+                "Skipped": 0
+            },
+            "MachinesAvailable": {
+                "DryRun": 0,
+                "Release": 0
+            },
+            "Duration": 2366166475,
+            "Versions": {
+                "8": {
+                    "Version": "8",
+                    "TestTargetTotals": {
+                        "Total": -98,
+                        "Executed": -28,
+                        "Passed": -24,
+                        "Failed": -4,
+                        "Disabled": -17,
+                        "Skipped": -53
+                    },
+                    "TestTotals": {
+                        "Total": 0,
+                        "Executed": 0,
+                        "Passed": 0,
+                        "Failed": 0,
+                        "Disabled": 0,
+                        "Skipped": 0
+                    },
+                    "Duration": 2366166475,
+                    "TestTargets": null
+                }
+            }
+        },
+        "x86-64_windows": {
+            "Platform": "x86-64_windows",
+            "TestTargetTotals": {
+                "Total": 749,
+                "Executed": 293,
+                "Passed": 319,
+                "Failed": -26,
+                "Disabled": 53,
+                "Skipped": 403
+            },
+            "TestTotals": {
+                "Total": 0,
+                "Executed": 0,
+                "Passed": 0,
+                "Failed": 0,
+                "Disabled": 0,
+                "Skipped": 0
+            },
+            "MachinesAvailable": {
+                "DryRun": 0,
+                "Release": 0
+            },
+            "Duration": 611707108,
+            "Versions": {
+                "11": {
+                    "Version": "11",
+                    "TestTargetTotals": {
+                        "Total": 751,
+                        "Executed": 301,
+                        "Passed": 299,
+                        "Failed": 2,
+                        "Disabled": 50,
+                        "Skipped": 400
+                    },
+                    "TestTotals": {
+                        "Total": 0,
+                        "Executed": 0,
+                        "Passed": 0,
+                        "Failed": 0,
+                        "Disabled": 0,
+                        "Skipped": 0
+                    },
+                    "Duration": 457581186,
+                    "TestTargets": null
+                },
+                "17": {
+                    "Version": "17",
+                    "TestTargetTotals": {
+                        "Total": 15,
+                        "Executed": 13,
+                        "Passed": 13,
+                        "Failed": 0,
+                        "Disabled": 1,
+                        "Skipped": 1
+                    },
+                    "TestTotals": {
+                        "Total": 0,
+                        "Executed": 0,
+                        "Passed": 0,
+                        "Failed": 0,
+                        "Disabled": 0,
+                        "Skipped": 0
+                    },
+                    "Duration": -18352945,
+                    "TestTargets": null
+                },
+                "21": {
+                    "Version": "21",
+                    "TestTargetTotals": {
+                        "Total": 1,
+                        "Executed": -1,
+                        "Passed": -4,
+                        "Failed": 3,
+                        "Disabled": 1,
+                        "Skipped": 1
+                    },
+                    "TestTotals": {
+                        "Total": 0,
+                        "Executed": 0,
+                        "Passed": 0,
+                        "Failed": 0,
+                        "Disabled": 0,
+                        "Skipped": 0
+                    },
+                    "Duration": 165421840,
+                    "TestTargets": null
+                },
+                "8": {
+                    "Version": "8",
+                    "TestTargetTotals": {
+                        "Total": -18,
+                        "Executed": -20,
+                        "Passed": 11,
+                        "Failed": -31,
+                        "Disabled": 1,
+                        "Skipped": 1
+                    },
+                    "TestTotals": {
+                        "Total": 0,
+                        "Executed": 0,
+                        "Passed": 0,
+                        "Failed": 0,
+                        "Disabled": 0,
+                        "Skipped": 0
+                    },
+                    "Duration": 7057027,
+                    "TestTargets": null
+                }
+            }
+        }
+    }
+}
