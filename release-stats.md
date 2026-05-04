@@ -13,6 +13,26 @@ tag data is in tag8.txt
 JDK 8 special extra is ../aarch32-jdk8u-tag8.txt
 
 
+<details><summary>Release tag: jdk8u492-ga</summary>
+
+|                       Tag|               Tagged Date |       Commit Date |              Days |
+|                       ---|                       --- |               --- |               --- |
+|               jdk8u492-ga| Fri Apr 17 17:04:32 UTC 2026 | Wed Apr 22 12:39:07 UTC 2026 |                -4 |
+|        jdk8u492-b09_adopt| Wed Apr 22 13:14:14 UTC 2026 | Wed Apr 22 13:14:14 UTC 2026 |                 0 |
+
+
+|   Platform|           OS |    Released | Target/Actual(days) |    On-time |                      RTAG|
+|        ---|          --- |         --- |               --- |        --- |                       ---|
+|        x64|        linux |  05-04-2026 |              2/11 |         No |        jdk8u492-b09_adopt|
+|    aarch64|        linux |  05-04-2026 |              2/11 |         No |        jdk8u492-b09_adopt|
+
+On-Time 0(0%)  Late: 2(100%)
+
+
+</details>
+
+
+
 <details><summary>Release tag: jdk8u482-ga</summary>
 
 |                       Tag|               Tagged Date |       Commit Date |              Days |
@@ -300,35 +320,6 @@ On-Time 10(90%)  Late: 1(9%)
 |        x32|      windows |  04-24-2024 |               7/6 |        Yes |        jdk8u412-b08_adopt|
 
 On-Time 11(100%)  Late: 0(0%)
-
-
-</details>
-
-
-
-<details><summary>Release tag: jdk8u402-ga</summary>
-
-|                       Tag|               Tagged Date |       Commit Date |              Days |
-|                       ---|                       --- |               --- |               --- |
-|               jdk8u402-ga| Thu Jan 11 01:53:23 UTC 2024 | Wed Jan 17 01:35:04 UTC 2024 |                -5 |
-|        jdk8u402-b06_adopt| Wed Jan 17 01:14:12 UTC 2024 | Wed Jan 17 01:14:12 UTC 2024 |                 0 |
-
-
-|   Platform|           OS |    Released | Target/Actual(days) |    On-time |                      RTAG|
-|        ---|          --- |         --- |               --- |        --- |                       ---|
-|        x64|        linux |  01-19-2024 |               2/2 |        Yes |        jdk8u402-b06_adopt|
-|    ppc64le|        linux |  01-19-2024 |               7/2 |        Yes |        jdk8u402-b06_adopt|
-|        x64|      windows |  01-19-2024 |               2/2 |        Yes |        jdk8u402-b06_adopt|
-|        x64|          mac |  01-19-2024 |               2/2 |        Yes |        jdk8u402-b06_adopt|
-|    aarch64|        linux |  01-23-2024 |               2/5 |         No |        jdk8u402-b06_adopt|
-|        x64|      solaris |  01-23-2024 |               7/5 |        Yes |        jdk8u402-b06_adopt|
-|        x32|      windows |  01-23-2024 |               7/6 |        Yes |        jdk8u402-b06_adopt|
-|    sparcv9|      solaris |  01-23-2024 |               7/6 |        Yes |        jdk8u402-b06_adopt|
-|        x64| alpine-linux |  01-24-2024 |               7/7 |        Yes |        jdk8u402-b06_adopt|
-|        arm|        linux |  01-24-2024 |               7/7 |        Yes | jdk8u402-b06-aarch32-20240118_adopt|
-|      ppc64|          aix |  01-24-2024 |               7/7 |        Yes |        jdk8u402-b06_adopt|
-
-On-Time 10(90%)  Late: 1(9%)
 
 
 </details>
@@ -649,8 +640,10 @@ tag data is in tag17.txt
 |      ppc64|          aix |  04-29-2026 |               7/7 |        Yes |      jdk-17.0.19+10_adopt|
 |    riscv64|        linux |  04-29-2026 |               7/7 |        Yes |      jdk-17.0.19+10_adopt|
 |    aarch64|        linux |  04-30-2026 |               2/8 |         No |      jdk-17.0.19+10_adopt|
+|        x64|      windows |  05-04-2026 |              2/12 |         No |      jdk-17.0.19+10_adopt|
+|        arm|        linux |  05-04-2026 |              7/12 |         No |      jdk-17.0.19+10_adopt|
 
-On-Time 5(62%)  Late: 3(37%)
+On-Time 5(50%)  Late: 5(50%)
 
 
 </details>
@@ -952,8 +945,10 @@ tag data is in tag21.txt
 |        x64|      windows |  04-28-2026 |               2/6 |         No |      jdk-21.0.11+10_adopt|
 |    aarch64|        linux |  04-30-2026 |               2/8 |         No |      jdk-21.0.11+10_adopt|
 |    ppc64le|        linux |  04-30-2026 |               7/8 |         No |      jdk-21.0.11+10_adopt|
+|      s390x|        linux |  05-04-2026 |              7/12 |         No |      jdk-21.0.11+10_adopt|
+|    riscv64|        linux |  05-04-2026 |              7/12 |         No |      jdk-21.0.11+10_adopt|
 
-On-Time 4(44%)  Late: 5(55%)
+On-Time 4(36%)  Late: 7(63%)
 
 
 </details>
