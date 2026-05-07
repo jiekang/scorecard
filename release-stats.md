@@ -1380,8 +1380,10 @@ tag data is in tag26.txt
 |    riscv64|        linux |  05-07-2026 |              7/15 |         No |        jdk-26.0.1+8_adopt|
 |      s390x|        linux |  05-07-2026 |              7/15 |         No |        jdk-26.0.1+8_adopt|
 |        x64| alpine-linux |  05-07-2026 |              7/15 |         No |        jdk-26.0.1+8_adopt|
+|    aarch64|          mac |  05-07-2026 |              2/15 |         No |        jdk-26.0.1+8_adopt|
+|        x64|          mac |  05-07-2026 |              2/15 |         No |        jdk-26.0.1+8_adopt|
 
-On-Time 0(0%)  Late: 8(100%)
+On-Time 0(0%)  Late: 10(100%)
 
 
 </details>
