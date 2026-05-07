@@ -1351,3 +1351,67 @@ On-Time 11(100%)  Late: 0(0%)
 
 </details>
 
+Processing: 26 
+In JDK, caching tags and release information
+Fetching / Updating Git Repos
+Repo is  https://github.com/adoptium/jdk26u
+Initialized empty Git repository in /home/runner/work/scorecard/scorecard/data/jdk26u/.git/
+Getting Tags for jdk26u
+
+Release data is in data/releases26.json
+tag data is in tag26.txt
+
+
+<details><summary>Release tag: jdk-26.0.1-ga</summary>
+
+|                       Tag|               Tagged Date |       Commit Date |              Days |
+|                       ---|                       --- |               --- |               --- |
+|             jdk-26.0.1-ga| Tue Mar 10 15:42:26 UTC 2026 | Tue Apr 21 15:41:39 UTC 2026 |               -41 |
+|        jdk-26.0.1+8_adopt| Tue Apr 21 16:30:15 UTC 2026 | Tue Apr 21 16:30:16 UTC 2026 |                 0 |
+
+
+|   Platform|           OS |    Released | Target/Actual(days) |    On-time |                      RTAG|
+|        ---|          --- |         --- |               --- |        --- |                       ---|
+|        x64|        linux |  05-06-2026 |              2/14 |         No |        jdk-26.0.1+8_adopt|
+|    aarch64|        linux |  05-06-2026 |              2/14 |         No |        jdk-26.0.1+8_adopt|
+|    aarch64| alpine-linux |  05-06-2026 |              7/14 |         No |        jdk-26.0.1+8_adopt|
+|      ppc64|          aix |  05-06-2026 |              7/15 |         No |        jdk-26.0.1+8_adopt|
+|    ppc64le|        linux |  05-07-2026 |              7/15 |         No |        jdk-26.0.1+8_adopt|
+|    riscv64|        linux |  05-07-2026 |              7/15 |         No |        jdk-26.0.1+8_adopt|
+|      s390x|        linux |  05-07-2026 |              7/15 |         No |        jdk-26.0.1+8_adopt|
+|        x64| alpine-linux |  05-07-2026 |              7/15 |         No |        jdk-26.0.1+8_adopt|
+
+On-Time 0(0%)  Late: 8(100%)
+
+
+</details>
+
+
+
+<details><summary>Release tag: jdk-26-ga</summary>
+
+|                       Tag|               Tagged Date |       Commit Date |              Days |
+|                       ---|                       --- |               --- |               --- |
+|                 jdk-26-ga| Thu Feb 12 15:13:35 UTC 2026 | Tue Mar 17 16:02:34 UTC 2026 |               -33 |
+|           jdk-26+35_adopt| Thu May  7 00:00:00 UTC 2026 | Thu May  7 00:00:00 UTC 2026 |                 0 |
+
+
+|   Platform|           OS |    Released | Target/Actual(days) |    On-time |                      RTAG|
+|        ---|          --- |         --- |               --- |        --- |                       ---|
+|    aarch64|        linux |  03-31-2026 |             2/-36 |        Yes |           jdk-26+35_adopt|
+|        x64|        linux |  03-31-2026 |             2/-36 |        Yes |           jdk-26+35_adopt|
+|      ppc64|          aix |  03-31-2026 |             7/-36 |        Yes |           jdk-26+35_adopt|
+|    aarch64| alpine-linux |  03-31-2026 |             7/-36 |        Yes |           jdk-26+35_adopt|
+|    ppc64le|        linux |  03-31-2026 |             7/-36 |        Yes |           jdk-26+35_adopt|
+|        x64| alpine-linux |  03-31-2026 |             7/-36 |        Yes |           jdk-26+35_adopt|
+|        x64|          mac |  04-01-2026 |             2/-35 |        Yes |           jdk-26+35_adopt|
+|      s390x|        linux |  04-07-2026 |             7/-29 |        Yes |           jdk-26+35_adopt|
+|    aarch64|          mac |  04-07-2026 |             2/-29 |        Yes |           jdk-26+35_adopt|
+|    riscv64|        linux |  04-07-2026 |             7/-29 |        Yes |           jdk-26+35_adopt|
+|        x64|      windows |  04-07-2026 |             2/-29 |        Yes |           jdk-26+35_adopt|
+
+On-Time 11(100%)  Late: 0(0%)
+
+
+</details>
+
