@@ -30,8 +30,9 @@ JDK 8 special extra is ../aarch32-jdk8u-tag8.txt
 |        x64| alpine-linux |  05-05-2026 |              7/13 |         No |        jdk8u492-b09_adopt|
 |      ppc64|          aix |  05-06-2026 |              7/13 |         No |        jdk8u492-b09_adopt|
 |    ppc64le|        linux |  05-06-2026 |              7/13 |         No |        jdk8u492-b09_adopt|
+|        x64|      windows |  05-12-2026 |              2/19 |         No |        jdk8u492-b09_adopt|
 
-On-Time 0(0%)  Late: 7(100%)
+On-Time 0(0%)  Late: 8(100%)
 
 
 </details>
@@ -953,8 +954,9 @@ tag data is in tag21.txt
 |    ppc64le|        linux |  04-30-2026 |               7/8 |         No |      jdk-21.0.11+10_adopt|
 |      s390x|        linux |  05-04-2026 |              7/12 |         No |      jdk-21.0.11+10_adopt|
 |    riscv64|        linux |  05-04-2026 |              7/12 |         No |      jdk-21.0.11+10_adopt|
+|    aarch64|      windows |  05-14-2026 |              7/22 |         No |      jdk-21.0.11+10_adopt|
 
-On-Time 4(36%)  Late: 7(63%)
+On-Time 4(33%)  Late: 8(66%)
 
 
 </details>
@@ -1395,22 +1397,22 @@ On-Time 0(0%)  Late: 10(100%)
 |                       Tag|               Tagged Date |       Commit Date |              Days |
 |                       ---|                       --- |               --- |               --- |
 |                 jdk-26-ga| Thu Feb 12 15:13:35 UTC 2026 | Tue Mar 17 16:02:34 UTC 2026 |               -33 |
-|           jdk-26+35_adopt| Thu May  7 00:00:00 UTC 2026 | Thu May  7 00:00:00 UTC 2026 |                 0 |
+|           jdk-26+35_adopt| Thu May 14 00:00:00 UTC 2026 | Thu May 14 00:00:00 UTC 2026 |                 0 |
 
 
 |   Platform|           OS |    Released | Target/Actual(days) |    On-time |                      RTAG|
 |        ---|          --- |         --- |               --- |        --- |                       ---|
-|    aarch64|        linux |  03-31-2026 |             2/-36 |        Yes |           jdk-26+35_adopt|
-|        x64|        linux |  03-31-2026 |             2/-36 |        Yes |           jdk-26+35_adopt|
-|      ppc64|          aix |  03-31-2026 |             7/-36 |        Yes |           jdk-26+35_adopt|
-|    aarch64| alpine-linux |  03-31-2026 |             7/-36 |        Yes |           jdk-26+35_adopt|
-|    ppc64le|        linux |  03-31-2026 |             7/-36 |        Yes |           jdk-26+35_adopt|
-|        x64| alpine-linux |  03-31-2026 |             7/-36 |        Yes |           jdk-26+35_adopt|
-|        x64|          mac |  04-01-2026 |             2/-35 |        Yes |           jdk-26+35_adopt|
-|      s390x|        linux |  04-07-2026 |             7/-29 |        Yes |           jdk-26+35_adopt|
-|    aarch64|          mac |  04-07-2026 |             2/-29 |        Yes |           jdk-26+35_adopt|
-|    riscv64|        linux |  04-07-2026 |             7/-29 |        Yes |           jdk-26+35_adopt|
-|        x64|      windows |  04-07-2026 |             2/-29 |        Yes |           jdk-26+35_adopt|
+|    aarch64|        linux |  03-31-2026 |             2/-43 |        Yes |           jdk-26+35_adopt|
+|        x64|        linux |  03-31-2026 |             2/-43 |        Yes |           jdk-26+35_adopt|
+|      ppc64|          aix |  03-31-2026 |             7/-43 |        Yes |           jdk-26+35_adopt|
+|    aarch64| alpine-linux |  03-31-2026 |             7/-43 |        Yes |           jdk-26+35_adopt|
+|    ppc64le|        linux |  03-31-2026 |             7/-43 |        Yes |           jdk-26+35_adopt|
+|        x64| alpine-linux |  03-31-2026 |             7/-43 |        Yes |           jdk-26+35_adopt|
+|        x64|          mac |  04-01-2026 |             2/-42 |        Yes |           jdk-26+35_adopt|
+|      s390x|        linux |  04-07-2026 |             7/-36 |        Yes |           jdk-26+35_adopt|
+|    aarch64|          mac |  04-07-2026 |             2/-36 |        Yes |           jdk-26+35_adopt|
+|    riscv64|        linux |  04-07-2026 |             7/-36 |        Yes |           jdk-26+35_adopt|
+|        x64|      windows |  04-07-2026 |             2/-36 |        Yes |           jdk-26+35_adopt|
 
 On-Time 11(100%)  Late: 0(0%)
 
